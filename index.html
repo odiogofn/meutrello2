@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>📋 Relatório de Demandas Trello</title>
+
+<link rel="stylesheet" href="style.css"/>
+
+<!-- Excel / Word export libs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<!-- Markdown renderer + security -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+
+</head>
+<body>
+
+<header>📋 Relatório de Demandas - Trello</header>
+
+<div class="filters">
+  <label>Quadro:</label>
+  <select id="boardSelect"><option value="">Selecione...</option></select>
+
+  <label>Lista:</label>
+  <select id="listSelect"><option value="all">Todas</option></select>
+
+  <label>Etiqueta:</label>
+  <select id="labelFilter"><option value="all">Todas</option></select>
+
+  <label>Título:</label>
+  <input type="text" id="searchInput" placeholder="Buscar título...">
+
+  <label>Data por:</label>
+  <select id="dateMode">
+    <option value="created">Criação</option>
+    <option value="updated">Última alteração</option>
+  </select>
+
+  <label>De:</label>
+  <input type="date" id="dateStart">
+
+  <label>Até:</label>
+  <input type="date" id="dateEnd">
+
+  <button id="clearDates" class="secondary">Limpar Datas</button>
+  <button id="loadReport" class="primary">Gerar Relatório</button>
+</div>
+
+<div class="export-bar" id="exportBtns" style="display:none;">
+  <button onclick="window.print()">🖨️ Imprimir Tudo</button>
+  <button id="exportPdf">📄 PDF</button>
+  <button id="exportExcel">📊 Excel</button>
+  <button id="exportWord">📝 Word</button>
+</div>
+
+<div id="reportContainer"></div>
+
+<script src="relatorio.js"></script>
+</body>
+</html>

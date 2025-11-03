@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f4f5f7;
+  color: #172b4d;
+}
+
+header {
+  background: #0747a6;
+  padding: 18px;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Filters */
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 12px;
+  background: #ffffff;
+  padding: 15px;
+  border-bottom: 2px solid #0747a6;
+}
+
+.filters select,
+.filters input,
+.filters button {
+  padding: 8px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.primary {
+  background: #0052cc;
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+.primary:hover { background:#0747a6; }
+
+.secondary {
+  background: #f0f2f5;
+  font-weight: 600;
+}
+
+/* Export Bar */
+.export-bar {
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  background: #ffffff;
+  border-bottom: 1px solid #dcdfe6;
+}
+
+/* Card */
+.report-card {
+  background: white;
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 15px;
+  box-shadow: 0 2px 6px rgba(9,30,66,.08);
+}
+
+.report-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0747a6;
+}
+
+.info-row {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+/* Badges */
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: white;
+  font-size: 11px;
+  margin-right: 4px;
+}
+
+.member-chip {
+  display:inline-block;
+  padding:3px 8px;
+  background:#e9edf5;
+  border-radius:5px;
+  margin-right:4px;
+  font-size:12px;
+}
+
+/* Section toggles */
+.subtitle {
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #0747a6;
+}
+
+.section-toggle {
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #0052cc;
+  font-weight: 600;
+}
+
+.section-toggle.active { color:#0747a6; }
+
+.section-content {
+  margin: 8px 0 10px 0;
+  padding-left: 6px;
+  border-left: 2px solid #dcdfe6;
+  display: none;
+}
+.section-content.open { display: block; }
+
+/* Comments */
+.comment-block {
+  background: #f8faff;
+  border-left: 3px solid #0052cc;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.cdate { font-size:11px;color:#6b778c; }
+
+/* Buttons */
+.report-actions button {
+  background: #f0f2f5;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #dcdfe6;
+  font-size: 12px;
+  margin-right: 6px;
+  margin-top: 10px;
+}
+.report-actions button:hover { background:#e2e6ec; }
+
+@media print {
+  .filters, .export-bar, button { display: none !important; }
+  body { background: white; }
+}
