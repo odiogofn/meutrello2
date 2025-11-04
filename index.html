@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
-<title>📋 Relatório de Demandas Trello</title>
+<title>📋 Relatório de Demandas - Trello</title>
 
 <link rel="stylesheet" href="style.css"/>
 
@@ -10,12 +10,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
-<!-- Markdown renderer + security -->
+<!-- Markdown -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
 
+<!-- PDF export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 </head>
 <body>
+
+<!-- TIMBRE - escondido na tela, aparece só na impressão -->
+<div class="print-header" style="display:none;">
+  <img src="logo.png" style="height:85px; margin-bottom:3px;">
+  <div class="header-text">
+    <strong>ASPEC INFORMÁTICA</strong><br>
+    RELATÓRIO DE ATIVIDADES / DEMANDAS
+  </div>
+</div>
+
+<div class="print-footer" style="display:none;">
+  ASPEC Informática — Soluções para Gestão Pública<br>
+  Fone: (85) 3052-3000 | www.aspec.com.br | Fortaleza - CE
+</div>
 
 <header>📋 Relatório de Demandas - Trello</header>
 
@@ -49,8 +66,10 @@
 </div>
 
 <div class="export-bar" id="exportBtns" style="display:none;">
-  <button onclick="window.print()">🖨️ Imprimir Tudo</button>
-  <button id="exportPdf">📄 PDF</button>
+  <button id="btnPrintTimbrado">🖨️ Imprimir Timbrado</button>
+  <button id="btnPrintSimples">🖨️ Imprimir Simples</button>
+  <button id="btnPdfTimbrado">📄 PDF Timbrado</button>
+  <button id="btnPdfSimples">📄 PDF Simples</button>
   <button id="exportExcel">📊 Excel</button>
   <button id="exportWord">📝 Word</button>
 </div>

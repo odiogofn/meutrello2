@@ -14,12 +14,11 @@ header {
   font-weight: bold;
 }
 
-/* Filters */
 .filters {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
   gap: 12px;
-  background: #ffffff;
+  background: #fff;
   padding: 15px;
   border-bottom: 2px solid #0747a6;
 }
@@ -46,7 +45,6 @@ header {
   font-weight: 600;
 }
 
-/* Export Bar */
 .export-bar {
   padding: 12px;
   display: flex;
@@ -79,16 +77,13 @@ header {
 
 /* Badges */
 .tag {
-  display: inline-block;
   padding: 3px 8px;
   border-radius: 4px;
   color: white;
   font-size: 11px;
   margin-right: 4px;
 }
-
 .member-chip {
-  display:inline-block;
   padding:3px 8px;
   background:#e9edf5;
   border-radius:5px;
@@ -96,7 +91,7 @@ header {
   font-size:12px;
 }
 
-/* Section toggles */
+/* Sections */
 .subtitle {
   font-weight: 600;
   margin-top: 10px;
@@ -111,7 +106,6 @@ header {
   color: #0052cc;
   font-weight: 600;
 }
-
 .section-toggle.active { color:#0747a6; }
 
 .section-content {
@@ -122,7 +116,6 @@ header {
 }
 .section-content.open { display: block; }
 
-/* Comments */
 .comment-block {
   background: #f8faff;
   border-left: 3px solid #0052cc;
@@ -133,19 +126,59 @@ header {
 }
 .cdate { font-size:11px;color:#6b778c; }
 
-/* Buttons */
-.report-actions button {
-  background: #f0f2f5;
-  padding: 5px 10px;
-  border-radius: 6px;
-  border: 1px solid #dcdfe6;
-  font-size: 12px;
-  margin-right: 6px;
-  margin-top: 10px;
-}
-.report-actions button:hover { background:#e2e6ec; }
-
+/* ===== PRINT MODE ===== */
 @media print {
-  .filters, .export-bar, button { display: none !important; }
-  body { background: white; }
+
+  header,
+  .filters,
+  .export-bar,
+  #btnPrintTimbrado,
+  #btnPrintSimples,
+  #btnPdfTimbrado,
+  #btnPdfSimples {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  #reportContainer {
+    margin-top: 140px;
+    margin-bottom: 80px;
+  }
+
+  .print-header {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 5px;
+    border-bottom: 2px solid #0747a6;
+    background: #fff;
+  }
+
+  .print-footer {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+    border-top: 2px solid #0747a6;
+    font-size: 11px;
+    color: #0747a6;
+    background: #fff;
+  }
+
+  .report-card {
+    page-break-inside: avoid;
+  }
+}
+
+/* SIMPLE PRINT */
+.print-simple .print-header,
+.print-simple .print-footer {
+  display: none !important;
 }
